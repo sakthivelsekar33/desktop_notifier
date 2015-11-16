@@ -10,7 +10,7 @@ class Notify
   end
 
   def notify
-    csv_contents = CSV.read("tasks.csv")[1 .. -1]
+    csv_contents = CSV.read("/home/sakthivel/apps/desktop_notifier/tasks.csv")[1 .. -1]
     csv_contents.each do |row|
       next if row.empty?
       if daily_notification?(row) && time_matches?(row)
